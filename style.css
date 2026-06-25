@@ -1,4 +1,4 @@
-/*GIAO DIỆN TRANG CHỦ*/
+/* GIAO DIỆN TRANG CHỦ */
 
         /* --- CSS RESET & GENERAL STYLES --- */
         * {
@@ -296,4 +296,224 @@
 .search-input:focus {
     width: 180px; /* Độ dài khi mở rộng ra */
     padding: 0 10px;
+}
+
+/* ==========================================================================
+   CSS DÀNH RIÊNG CHO TRANG SẢN PHẨM (PRODUCT LISTING PAGE)
+   ========================================================================== */
+
+/* 1. Thanh điều hướng phụ (Breadcrumb) */
+.breadcrumb-container {
+    background-color: #f1f5f9;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #64748b;
+}
+
+.breadcrumb a {
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #0d6efd;
+}
+
+.breadcrumb span {
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* 2. Bố cục chính Grid 2 cột: Sidebar Bộ lọc & Vùng sản phẩm */
+.product-page-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px; /* Sửa lỗi chạm sát mép màn hình */
+}
+
+/* 3. Bộ lọc bên trái (Sidebar Filter) */
+.sidebar-filter {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.filter-section {
+    margin-bottom: 32px;
+}
+
+.filter-section:last-child {
+    margin-bottom: 0;
+}
+
+.filter-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+}
+
+/* Thanh gạch dưới tiêu đề bộ lọc */
+.filter-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #0d6efd;
+}
+
+.filter-section ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #334155;
+    list-style: none;
+}
+
+.filter-section ul li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-section ul li input[type="checkbox"],
+.filter-section ul li input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #0d6efd; /* Ép màu xanh đồng bộ thương hiệu */
+}
+
+/* 4. Vùng nội dung sản phẩm bên phải */
+.product-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Thanh công cụ sắp xếp (Toolbar) */
+.product-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.product-count {
+    font-size: 15px;
+    color: #475569;
+}
+
+.product-count strong {
+    color: #0f172a;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.sort-options select {
+    padding: 8px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    background-color: #ffffff;
+    color: #1e293b;
+    cursor: pointer;
+    font-weight: 500;
+    transition: border-color 0.2s;
+}
+
+.sort-options select:focus {
+    border-color: #0d6efd;
+}
+
+/* Khối điều hướng Phân trang (Pagination) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 48px;
+}
+
+.page-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 6px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.page-item:hover {
+    border-color: #cbd5e1;
+    color: #0f172a;
+    background-color: #f8fafc;
+}
+
+.page-item.active {
+    background-color: #0d6efd;
+    color: #ffffff;
+    border-color: #0d6efd;
+}
+
+/* 5. Responsive tối ưu hiển thị cho Mobile & Tablet */
+@media (max-width: 992px) {
+    .product-page-layout {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột đứng */
+        gap: 24px;
+        margin: 24px auto;
+    }
+    .sidebar-filter {
+        display: none; /* Tạm thời ẩn bộ lọc sidebar trên mobile để tránh chật màn hình */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .sort-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .sort-options select {
+        flex-grow: 1;
+        max-width: 200px;
+    }
 }
