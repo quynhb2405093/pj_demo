@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm - DR.SKINCARE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">DR.SKINCARE</div>
+            <nav class="nav-links">
+                <a href="index.html">Trang Chủ</a>
+                <a href="products.html" class="active">Sản Phẩm</a>
+                <a href="#">Về Chúng Tôi</a>
+                <a href="#">Liên Hệ</a>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm mỹ phẩm...">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </nav>
+            <div class="nav-icons">
+                <span>🛒 (0)</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb-container">
+        <div class="container breadcrumb">
+            <a href="index.html">Trang chủ</a> &gt; <span>Tất cả sản phẩm</span>
+        </div>
+    </div>
+
+    <main class="container product-page-layout">
+        
+        <aside class="sidebar-filter">
+            <div class="filter-section">
+                <h3>Danh Mục Sản Phẩm</h3>
+                <ul>
+                    <li><label><input type="checkbox" checked> Tất cả sản phẩm</label></li>
+                    <li><label><input type="checkbox"> Serum & Tinh chất</label></li>
+                    <li><label><input type="checkbox"> Tẩy tế bào chết (AHA/BHA)</label></li>
+                    <li><label><input type="checkbox"> Kem dưỡng phục hồi</label></li>
+                </ul>
+            </div>
+            <div class="filter-section">
+                <h3>Tình Trạng Da</h3>
+                <ul>
+                    <li><label><input type="checkbox"> Da dầu mụn</label></li>
+                    <li><label><input type="checkbox"> Da khô, thiếu ẩm</label></li>
+                    <li><label><input type="checkbox"> Da nhạy cảm tổn thương</label></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="product-content">
+            <div class="product-toolbar">
+                <p class="product-count">Hiển thị <strong>6</strong> sản phẩm</p>
+                <div class="sort-options">
+                    <label for="sort">Sắp xếp theo:</label>
+                    <select id="sort">
+                        <option>Bán chạy nhất</option>
+                        <option>Giá: Thấp đến Cao</option>
+                        <option>Giá: Cao đến Thấp</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <span class="product-brand">Dr.Skincare</span>
+                        <h3 class="product-name">Tinh Chất B5 Phục Hồi & Cấp Ẩm Chuyên Sâu</h3>
+                        <div class="product-price">350.000 đ</div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                </div>
+
+            <div class="pagination">
+                <a href="#" class="page-item active">1</a>
+                <a href="#" class="page-item">2</a>
+                <a href="#" class="page-item">&raquo;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>...</footer>
+
+</body>
+</html>
