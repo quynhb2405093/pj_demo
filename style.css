@@ -39,13 +39,21 @@
             z-index: 1000;
         }
 
-        .navbar {
+        /* .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-        }
+        } */
 
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Tăng padding một chút để header thoáng hơn */
+    min-height: 70px; /* Ép một chiều cao tối thiểu cố định cho thanh điều hướng */
+    width: 100%;
+}
         .logo {
             font-size: 24px;
             font-weight: 700;
@@ -67,8 +75,16 @@
             color: #0d6efd;
         }
 
+        /* .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        } */
+        
         .nav-icons {
             display: flex;
+            align-items: center; /* Thêm dòng này để căn giữa các icon với nhau */
             gap: 20px;
             font-weight: 600;
             cursor: pointer;
