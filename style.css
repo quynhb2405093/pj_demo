@@ -39,21 +39,14 @@
             z-index: 1000;
         }
 
-        /* .navbar {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-        } */
+        }
 
-        .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0; /* Tăng padding một chút để header thoáng hơn */
-    min-height: 70px; /* Ép một chiều cao tối thiểu cố định cho thanh điều hướng */
-    width: 100%;
-}
+        
         .logo {
             font-size: 24px;
             font-weight: 700;
@@ -532,4 +525,268 @@
         flex-grow: 1;
         max-width: 200px;
     }
+}
+
+/* ==========================================================================
+   CSS DÀNH RIÊNG CHO TRANG ĐẶT HÀNG / THANH TOÁN (CHECKOUT PAGE)
+   ========================================================================== */
+
+/* 1. Bố cục phân bổ 2 cột chính giống Cocoon */
+.checkout-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px; /* Cột thông tin chiếm phần lớn, cột đơn hàng cố định 420px */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 2. Style khối thông tin bên trái */
+.checkout-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.checkout-section {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.checkout-section h2 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+/* Các ô input nhập liệu */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: #1e293b;
+    transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd; /* Sắc xanh đồng bộ thương hiệu */
+}
+
+/* Bố cục lưới cho form (chia đôi, chia ba) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-grid.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Khối phương thức thanh toán */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-item:hover {
+    background-color: #f8fafc;
+    border-color: #0d6efd;
+}
+
+.payment-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0d6efd;
+}
+
+.payment-text {
+    font-size: 14px;
+    color: #334155;
+    font-weight: 500;
+}
+
+/* 3. Style khối tóm tắt đơn hàng bên phải */
+.checkout-right {
+    position: sticky;
+    top: 90px; /* Đứng im khi cuộn trang nếu navbar sticky */
+    height: fit-content;
+}
+
+.order-summary-box {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.order-summary-box h2 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Sản phẩm thu nhỏ trong đơn hàng */
+.order-items-list {
+    max-height: 240px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.order-item-img {
+    width: 60px;
+    height: 60px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    position: relative;
+}
+
+.order-item-img::before {
+    content: "ẢNH";
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+}
+
+.order-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+.order-item-qty {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.order-item-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Khung mã giảm giá */
+.coupon-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.btn-apply-coupon {
+    background-color: #475569;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-apply-coupon:hover {
+    background-color: #1e293b;
+}
+
+/* Dòng tổng tiền */
+.price-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #475569;
+}
+
+.summary-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 4px 0;
+}
+
+.total-line {
+    font-size: 16px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.final-total {
+    font-size: 20px;
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+/* Nút Đặt hàng lớn */
+.btn-submit-order {
+    width: 100%;
+    background-color: #1a2530; /* Đồng bộ màu đen tối giản của nút trang chủ */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit-order:hover {
+    background-color: #0d6efd; /* Chuyển màu xanh khi hover mượt mà */
 }
