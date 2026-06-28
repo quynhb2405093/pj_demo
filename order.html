@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán | DR.SKINCARE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="./index.html">Trang chủ</a> &gt; <span>Thanh toán đơn hàng</span>
+        </div>
+    </div>
+
+    <main class="checkout-page-layout">
+        
+        <section class="checkout-left">
+            <form id="checkout-form">
+                
+                <div class="checkout-section">
+                    <h2>Thông tin giao hàng</h2>
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ và tên" required class="form-control">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Số điện thoại" required class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Địa chỉ nhận hàng (Số nhà, tên đường, phường, quận, thành phố...)" required class="form-control">
+                    </div>
+                    <!-- <div class="form-grid triple">
+                        <div class="form-group">
+                            <select required class="form-control">
+                                <option value="" disabled selected>Tỉnh / Thành phố</option>
+                                <option value="HCM">Hồ Chí Minh</option>
+                                <option value="HN">Hà Nội</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select required class="form-control">
+                                <option value="" disabled selected>Quận / Huyện</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select required class="form-control">
+                                <option value="" disabled selected>Phường / Xã</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <textarea placeholder="Ghi chú đơn hàng (Tùy chọn)" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2>Phương thức thanh toán</h2>
+                    <div class="payment-options">
+                        <label class="payment-item">
+                            <input type="radio" name="payment_method" value="cod" checked>
+                            <span class="payment-text">Thanh toán khi nhận hàng (COD)</span>
+                        </label>
+                        <label class="payment-item">
+                            <input type="radio" name="payment_method" value="momo">
+                            <span class="payment-text">Thanh toán qua ví MoMo</span>
+                        </label>
+                        <label class="payment-item">
+                            <input type="radio" name="payment_method" value="vnpay">
+                            <span class="payment-text">Thanh toán qua VNPAY (Thẻ ATM / Visa / QR)</span>
+                        </label>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="checkout-right">
+            <div class="order-summary-box">
+                <h2>Đơn hàng của bạn (1)</h2>
+                
+                <div class="order-items-list">
+                    <div class="order-item">
+                        <div class="order-item-img">
+                            </div>
+                        <div class="order-item-info">
+                            <span class="order-item-name">Tinh Chất B3 Phục Hồi & Cấp Ẩm Chuyên Sâu</span>
+                            <span class="order-item-qty">Số lượng: 1</span>
+                        </div>
+                        <div class="order-item-price">350.000 đ</div>
+                    </div>
+                </div>
+
+                <div class="coupon-box">
+                    <input type="text" placeholder="Nhập mã giảm giá" class="form-control coupon-input">
+                    <button type="button" class="btn-apply-coupon">Áp dụng</button>
+                </div>
+
+                <div class="price-lines">
+                    <div class="price-line">
+                        <span>Tạm tính</span>
+                        <span>350.000 đ</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Phí vận chuyển</span>
+                        <span>Miễn phí</span>
+                    </div>
+                    <hr class="summary-divider">
+                    <div class="price-line total-line">
+                        <span>Tổng tiền thanh toán</span>
+                        <span class="final-total">350.000 đ</span>
+                    </div>
+                </div>
+
+                <button type="submit" form="checkout-form" class="btn-submit-order">Hoàn Tất Đặt Hàng</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Về DR.SKINCARE</h4>
+                <ul>
+                    <li>Câu chuyện thương hiệu</li>
+                    <li>Cam kết sản phẩm</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Chính sách</h4>
+                <ul>
+                    <li>Chính sách bảo mật</li>
+                    <li>Chính sách bán hàng</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 DR.SKINCARE. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
