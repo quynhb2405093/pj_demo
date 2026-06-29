@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản | DR.SKINCARE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header giống các trang khác -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">DR.SKINCARE</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Trang Chủ</a></li>
+                <li><a href="./product.html">Sản Phẩm</a></li>
+                <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <a href="./login.html" class="account-btn">👤</a>
+                <a href="./order.html" class="cart-btn">🛒 (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb-container">
+        <div class="container breadcrumb">
+            <a href="./index.html">Trang chủ</a> &gt; <span>Tài khoản</span>
+        </div>
+    </div>
+
+    <main class="account-page">
+        <div class="account-container">
+            <!-- ĐÃ XÓA PHẦN AUTH-TABS Ở ĐÂY ĐỂ GIAO DIỆN GỌN GÀNG HƠN -->
+
+            <!-- Form Đăng Nhập -->
+            <div id="login-form" class="auth-form">
+                <h2>Đăng nhập</h2>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Mật khẩu" required class="form-control">
+                </div>
+                <div class="flex-between">
+                    <label><input type="checkbox"> Ghi nhớ tôi</label>
+                    <a href="#" id="forgot-link" class="forgot-link">Quên mật khẩu?</a>
+                </div>
+                <button type="submit" class="btn-primary">Đăng Nhập</button>
+                <p class="switch-text">Chưa có tài khoản? <a href="#" class="switch-to-register">Đăng ký ngay</a></p>
+            </div>
+
+            <!-- Form Đăng Ký -->
+            <div id="register-form" class="auth-form hidden">
+                <h2>Đăng ký tài khoản</h2>
+                <div class="form-group">
+                    <input type="text" placeholder="Họ và tên" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Số điện thoại" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Mật khẩu" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Nhập lại mật khẩu" required class="form-control">
+                </div>
+                <button type="submit" class="btn-primary">Đăng Ký</button>
+                <p class="switch-text">Đã có tài khoản? <a href="#" class="switch-to-login">Đăng nhập</a></p>
+            </div>
+
+            <!-- Form Quên mật khẩu -->
+            <div id="forgot-form" class="auth-form hidden">
+                <h2>Quên mật khẩu</h2>
+                <p class="form-description">Nhập email của bạn để nhận link đặt lại mật khẩu.</p>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required class="form-control">
+                </div>
+                <button type="submit" class="btn-primary">Gửi link đặt lại mật khẩu</button>
+                <p class="switch-text"><a href="#" id="back-to-login">Quay lại đăng nhập</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Về DR.SKINCARE</h4>
+                <p style="color: #ccc;">Thương hiệu dược mỹ phẩm tiên phong mang lại vẻ đẹp tự nhiên và khỏe mạnh từ sâu bên trong bằng khoa học.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Chính Sách</h4>
+                <ul>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Hệ</h4>
+                <ul>
+                    <li>Hotline: 1900 xxxx</li>
+                    <li>Email: info@drskincare.vn</li>
+                    <li>Địa chỉ: TP. Hồ Chí Minh, Việt Nam</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 DR.SKINCARE. Tất cả các quyền được bảo lưu.
+        </div>
+    </footer>
+
+    <script>
+        // Quản lý chuyển đổi form trực tiếp qua hàm điều hướng
+        const forms = {
+            login: document.getElementById('login-form'),
+            register: document.getElementById('register-form'),
+            forgot: document.getElementById('forgot-form')
+        };
+
+        function switchForm(targetForm) {
+            // Ẩn tất cả các form
+            Object.values(forms).forEach(form => form.classList.add('hidden'));
+            // Hiển thị form được chọn
+            forms[targetForm].classList.remove('hidden');
+        }
+
+        // Sự kiện khi nhấn "Đăng ký ngay" tại form Đăng Nhập
+        document.querySelectorAll('.switch-to-register').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForm('register');
+            });
+        });
+
+        // Sự kiện khi nhấn "Đăng nhập" tại form Đăng Ký
+        document.querySelectorAll('.switch-to-login').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForm('login');
+            });
+        });
+
+        // Sự kiện khi nhấn "Quên mật khẩu?"
+        document.getElementById('forgot-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            switchForm('forgot');
+        });
+
+        // Sự kiện khi nhấn "Quay lại đăng nhập" tại form Quên Mật Khẩu
+        document.getElementById('back-to-login').addEventListener('click', (e) => {
+            e.preventDefault();
+            switchForm('login');
+        });
+    </script>
+</body>
+</html>
