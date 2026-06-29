@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Giao Diện Cửa Hàng Mỹ Phẩm Dược Mỹ Phẩm -->
     <title>Trang Chủ</title>
-    <link rel="stylesheet" href="index.css">
     
 </head>
 <body>
+
     <header>
-        <div class="container navbar">
-            <!-- ICON NGƯỜI + LOGO -->
-            <div class="logo-container" onclick="showLoginModal()">
-                <span class="user-icon">👤</span>
-                <div class="logo">DR.SKINCARE</div>
-                <span class="tooltip">Đăng nhập</span>
-            </div>
-           
-            <nav class="nav-links">
-                <a href="./index.html">Trang Chủ</a>
-                <a href="./product.html">Sản Phẩm</a>
-                <a href="#">Về Chúng Tôi</a>
-                <a href="#">Liên Hệ</a>
-            </nav>
-           
+    <div class="container navbar">
+        <div class="logo">DR.SKINCARE</div>
+
+        <ul class="nav-links">
+            <li><a href="./index.html" target="_self">Trang Chủ</a></li>
+            <li><a href="./product.html">Sản Phẩm</a></li>
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+        </ul>
+
+        <div class="nav-icons">
             <div class="search-box">
-                <input type="text" class="search-input" placeholder="Tìm kiếm mỹ phẩm...">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
                 <button class="search-btn">🔍</button>
             </div>
-        </div>
-    </header>
+            <!-- thêm icon tài khoản -->
+            <a href="#" class="account-btn">👤</a>
 
-    <!-- Nội dung trang -->
+            <a href="./order.html" class="cart-btn">🛒 (0)</a>
+        </div>
+    </div>
+</header>
+
     <section class="hero">
         <div class="container hero-content">
             <h1>Chăm Sóc Da Khoa Học & Lành Tính</h1>
@@ -42,7 +44,9 @@
 
     <section class="products-section container">
         <h2 class="section-title">Sản Phẩm Bán Chạy</h2>
+        
         <div class="product-grid">
+            
             <div class="product-card">
                 <div class="product-image"></div>
                 <div class="product-info">
@@ -52,7 +56,37 @@
                     <button class="btn-add-cart">Thêm vào giỏ</button>
                 </div>
             </div>
-            <!-- Thêm các product-card khác nếu cần -->
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <span class="product-brand">Dr.Skincare</span>
+                    <h3 class="product-name">Serum Niacinamide 12% Giảm Thâm Sáng Da</h3>
+                    <div class="product-price">390.000 đ</div>
+                    <button class="btn-add-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <span class="product-brand">Dr.Skincare</span>
+                    <h3 class="product-name">Dung Dịch Tẩy Tế Bào Chết BHA 2% Nhẹ Dịu</h3>
+                    <div class="product-price">280.000 đ</div>
+                    <button class="btn-add-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-info">
+                    <span class="product-brand">Dr.Skincare</span>
+                    <h3 class="product-name">Kem Chống Nắng Phổ Rộng Bảo Vệ Toàn Diện</h3>
+                    <div class="product-price">420.000 đ</div>
+                    <button class="btn-add-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -84,71 +118,5 @@
         </div>
     </footer>
 
-    <!-- MODALS -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeAllModals()">×</span>
-            <h2>Đăng Nhập</h2>
-            <div class="form-group">
-                <label>Số điện thoại hoặc Email</label>
-                <input type="text" class="form-input" id="login-username" placeholder="Nhập số điện thoại hoặc email">
-            </div>
-            <div class="form-group">
-                <label>Mật khẩu</label>
-                <input type="password" class="form-input" id="login-password" placeholder="Nhập mật khẩu">
-            </div>
-            <button class="btn-primary" onclick="handleLogin()">Đăng Nhập</button>
-            <span class="link-text" onclick="showForgotModal()">Quên mật khẩu?</span>
-            <div class="switch-auth">
-                Chưa có tài khoản?
-                <span class="link-text" onclick="showRegisterModal()" style="display:inline;">Đăng ký ngay</span>
-            </div>
-        </div>
-    </div>
-
-    <div id="forgotModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeAllModals()">×</span>
-            <h2>Quên Mật Khẩu</h2>
-            <div class="form-group">
-                <label>Email của bạn</label>
-                <input type="email" class="form-input" id="forgot-email" placeholder="Nhập địa chỉ email">
-            </div>
-            <button class="btn-primary" onclick="sendResetLink()">Gửi Link Xác Nhận</button>
-            <div class="switch-auth">
-                Quay lại
-                <span class="link-text" onclick="showLoginModal()" style="display:inline;">Đăng nhập</span>
-            </div>
-        </div>
-    </div>
-
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeAllModals()">×</span>
-            <h2>Đăng Ký Tài Khoản</h2>
-            <div class="form-group">
-                <label>Họ và Tên</label>
-                <input type="text" class="form-input" id="reg-name" placeholder="Nhập họ và tên">
-            </div>
-            <div class="form-group">
-                <label>Số điện thoại</label>
-                <input type="text" class="form-input" id="reg-phone" placeholder="Nhập số điện thoại">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-input" id="reg-email" placeholder="Nhập email">
-            </div>
-            <div class="form-group">
-                <label>Mật khẩu</label>
-                <input type="password" class="form-input" id="reg-password" placeholder="Nhập mật khẩu">
-            </div>
-            <button class="btn-primary" onclick="handleRegister()">Đăng Ký</button>
-            <div class="switch-auth">
-                Đã có tài khoản?
-                <span class="link-text" onclick="showLoginModal()" style="display:inline;">Đăng nhập</span>
-            </div>
-        </div>
-    </div>
-    <script src="index.js"></script>
 </body>
 </html>
