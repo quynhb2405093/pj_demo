@@ -517,3 +517,137 @@
         max-width: 200px;
     }
 }
+
+/* ==========================================================================
+   CSS DÀNH RIÊNG CHO TRANG TÀI KHOẢN 
+   ========================================================================== */
+
+.account-page {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-container {
+    width: 100%;
+    max-width: 500px; /* Độ rộng tối ưu giúp form cân đối, sang trọng */
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.auth-form {
+    padding: 50px 45px; /* Tăng nhẹ padding để bù đắp không gian khi mất tab trên */
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #1a2530;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.form-description {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid #d8e0e9;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14.5px;
+}
+
+.forgot-link {
+    color: #0d6efd;
+    font-size: 14.5px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #1a2530;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16.5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #0d6efd;
+}
+
+.btn-primary:active {
+    transform: scale(0.99);
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+    color: #64748b;
+}
+
+.switch-text a {
+    color: #0d6efd;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive mượt mà cho thiết bị di động */
+@media (max-width: 576px) {
+    .account-page {
+        padding: 40px 15px;
+    }
+    .auth-form {
+        padding: 40px 24px;
+    }
+}
